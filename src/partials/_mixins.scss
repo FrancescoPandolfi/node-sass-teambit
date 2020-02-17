@@ -1,0 +1,17 @@
+@mixin btn {
+  border-radius: 6px;
+  padding: 10px 16px;
+  transition: all .3s;
+  font-size: $menufontSize;
+}
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin jumbocenter {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 30px;
+}

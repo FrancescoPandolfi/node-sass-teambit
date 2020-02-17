@@ -17,15 +17,30 @@ body {
   font-family: "harmonia";
 }
 
+h1 {
+  font-size: 52px;
+  line-height: 70px;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
 header {
   width: 1150px;
   margin: 0 auto;
+  color: #58402c;
 }
 header .menu-bar {
   height: 76px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #beb5b0;
+}
+header .menu-bar i.hamburger {
+  display: none;
+  font-size: 26px;
 }
 header .logo {
   margin-right: auto;
@@ -34,4 +49,132 @@ header .main-menu {
   display: flex;
   list-style: none;
   font-weight: bold;
+  font-size: 13px;
+}
+header .main-menu li {
+  margin-left: 40px;
+}
+header .main-menu li a:link, header .main-menu li a:visited, header .main-menu li a:active {
+  color: #58402c;
+}
+header .main-menu li a:hover {
+  color: #30488f;
+}
+header .main-menu li a img {
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+header .main-menu li .btn-sign {
+  border-radius: 6px;
+  padding: 10px 16px;
+  transition: all 0.3s;
+  font-size: 13px;
+  border: 1px solid #30488f;
+  background-color: white;
+}
+header .main-menu li .btn-sign:link {
+  color: #30488f;
+}
+header .main-menu li .btn-sign:hover {
+  color: white;
+  background-color: #30488f;
+}
+header .main-menu li .btn-sign img {
+  height: 18px;
+}
+header .jumbotron {
+  display: flex;
+  align-items: center;
+  padding: 110px 0;
+}
+header .jumbotron .jumbo-text {
+  width: 50%;
+}
+header .jumbotron .jumbo-text p {
+  font-size: 21px;
+  line-height: 31px;
+  margin-top: 30px;
+}
+header .jumbotron .jumbo-text .signup-zone {
+  margin-top: 50px;
+}
+header .jumbotron .jumbo-text .signup-zone .btn-blu {
+  border-radius: 6px;
+  padding: 10px 16px;
+  transition: all 0.3s;
+  font-size: 13px;
+  background-color: #30488f;
+}
+header .jumbotron .jumbo-text .signup-zone .btn-blu img {
+  height: 18px;
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+header .jumbotron .jumbo-text .signup-zone .btn-blu:link, header .jumbotron .jumbo-text .signup-zone .btn-blu:visited, header .jumbotron .jumbo-text .signup-zone .btn-blu:active {
+  color: white;
+}
+header .jumbotron .jumbo-text .signup-zone .btn-blu:hover {
+  background-color: #263970;
+}
+header .jumbotron .jumbo-text .signup-zone .or {
+  padding: 0 10px;
+  color: #afafaf;
+}
+header .jumbotron .jumbo-text .signup-zone .login {
+  display: block;
+  font-size: 13px;
+  color: #58402c;
+  transition: all 0.3s;
+  margin-top: 30px;
+}
+header .jumbotron .jumbo-text .signup-zone .login:hover {
+  color: #30488f;
+}
+header .jumbotron .jumbo-text .signup-zone .login i {
+  vertical-align: middle;
+}
+header .jumbotron .jumbo-img {
+  width: 50%;
+}
+header .jumbotron .jumbo-img img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  header {
+    width: 100%;
+    padding: 0 30px;
+  }
+  header .jumbotron {
+    display: block;
+    text-align: center;
+  }
+  header .jumbotron .jumbo-text {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 30px;
+    padding-bottom: 30px;
+  }
+  header .jumbotron .jumbo-img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0;
+  }
+  header .menu-bar {
+    padding: 0 30px;
+    height: 56px;
+  }
+  header .menu-bar .main-menu {
+    display: none;
+  }
+  header .menu-bar i.hamburger {
+    display: block;
+  }
 }

@@ -6,3 +6,11 @@
 body {
   font-family: $font;
 }
+h1 {
+  font-size: 52px;
+  line-height: 70px;
+}
+a {
+  text-decoration: none;
+  transition: color .3s;
+}

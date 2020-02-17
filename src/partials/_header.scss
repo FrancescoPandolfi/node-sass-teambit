@@ -1,20 +1,156 @@
 header {
   width: 1150px;
   margin: 0 auto;
+  color: $mainColor;
 
   .menu-bar {
     height: 76px;
-    display: flex;
-    align-items: center;
+    @include flexCenter;
     border-bottom: 1px solid #beb5b0;
+    i.hamburger {
+      display: none;
+      font-size: 26px;
+    }
   }
+
   .logo {
     margin-right: auto;
   }
+
   .main-menu {
     display: flex;
     list-style: none;
     font-weight: bold;
-  }
+    font-size: $menufontSize;
 
+    li {
+      margin-left: 40px;
+
+      a {
+        &:link,
+        &:visited,
+        &:active {
+          color: $mainColor;
+        }
+        &:hover {
+          color: $blueHover
+        }
+        img {
+          vertical-align: middle;
+          transform: translateY(-1px);
+        }
+      }
+      .btn-sign {
+        @include btn;
+        border: 1px solid $blueHover;
+        background-color: white;
+
+        &:link {
+          color: $blueHover;
+        }
+        &:hover {
+          color: white;
+          background-color: $blueHover;
+        }
+        img {
+          height: 18px;
+        }
+      }
+    }
+  }
+  .jumbotron {
+    @include flexCenter;
+    padding: 110px 0;
+
+    .jumbo-text {
+      width: 50%;
+
+      p {
+        font-size: 21px;
+        line-height: 31px;
+        margin-top: 30px;
+      }
+
+      .signup-zone {
+        margin-top: 50px;
+        .btn-blu {
+          @include btn;
+          background-color: $blueHover;
+          img {
+            height: 18px;
+            vertical-align: middle;
+            transform: translateY(-1px);
+          }
+          &:link, &:visited, &:active {
+            color: white;
+          }
+          &:hover {
+            background-color: darken($blueHover, 8%)
+          }
+        }
+        .or {
+          padding: 0 10px;
+          color: #afafaf;
+        }
+        .login {
+          display: block;
+          font-size: $menufontSize;
+          color: $mainColor;
+          transition: all .3s;
+          margin-top: 30px;
+          &:hover {
+            color: $blueHover;
+          }
+          i {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    .jumbo-img {
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header {
+    width: 100%;
+    padding: 0 30px;
+
+    .jumbotron {
+      display: block;
+      text-align: center;
+      .jumbo-text {
+        @include jumbocenter;
+        padding-bottom: 30px;
+      }
+      .jumbo-img {
+        @include jumbocenter;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0;
+
+    .menu-bar {
+      padding: 0 30px;
+      height: 56px;
+
+      .main-menu {
+        display: none;
+      }
+
+      i.hamburger {
+        display: block;
+      }
+    }
+  }
 }

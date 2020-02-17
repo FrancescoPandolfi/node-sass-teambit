@@ -4,34 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
   <link rel="stylesheet" href="dist/app.css">
   <title>Teambit</title>
 </head>
 <body>
     <!-- HEADER -->
     <header>
+      <!-- MENU BAR -->
       <div class="menu-bar">
         <div class="logo">
           <img src="img/logo.svg" alt="Teambit">
         </div>
         <ul class="main-menu">
-          <li>Solutions</li>
-          <li>Pricing</li>
-          <li>Blog</li>
-          <li>Sign in</li>
-          <li>Sign up</li>
+          <li>
+            <a href="#">Solutions <img src="img/more-other.svg" alt=""></a>
+          </li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Sign in</a></li>
+          <li>
+            <a class="btn-sign" href="#">
+            <img src="img/google.svg" alt=""> Sign up
+            </a>
+          </li>
         </ul>
+        <i class="lnr lnr-menu hamburger"></i>
       </div>
+      <!-- JUMBOTRON -->
       <div class="jumbotron">
-        <div class="jumbo-text"></div>
-        <div class="jumbo-img"></div>
+        <div class="jumbo-text">
+          <h1>Understand, recognize and develop your people</h1>
+          <p>Teambit helps teams create a high performing culture with regular feedback.</p>
+          <div class="signup-zone">
+            <a class="btn-blu" href="#"><img src="img/google2.svg" alt=""> Sign up with Google</a>
+            <small class="or">or</small>
+            <a class="btn-blu" href="#"><img src="img/slack.svg" alt=""> Sign up with Slack</a>
+            <a class="login" href="#">or use your email address <i class="lnr lnr-arrow-right"></i></a>
+          </div>
+        </div>
+        <figure class="jumbo-img"><img src="img/illustration-main.jpg" alt=""></figure>
       </div>
     </header>
-    
+
     <!-- MAIN -->
     <main></main>
 
 
-
+  <script src="dist/app.js" charset="utf-8"></script>
 </body>
 </html>
