@@ -1,3 +1,14 @@
-@import 'partials/_variables.scss';
-@import 'partials/_mixins.scss';
-@import 'partials/_common.scss';
+@font-face {
+    font-family: "harmonia";
+    src: url("../fonts/HarmoniaSansProCyr-Regular_gdi.woff");
+}
+@font-face {
+    font-family: "harmonia";
+    src: url("../fonts/HarmoniaSansProCyr-SemiBd_gdi.woff");
+    font-weight: bold;
+}
+
+@import 'partials/_variables';
+@import 'partials/_mixins';
+@import 'partials/_common';
+@import 'partials/_header';

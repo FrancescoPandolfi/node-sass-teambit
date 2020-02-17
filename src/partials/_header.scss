@@ -1,0 +1,20 @@
+header {
+  width: 1150px;
+  margin: 0 auto;
+
+  .menu-bar {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #beb5b0;
+  }
+  .logo {
+    margin-right: auto;
+  }
+  .main-menu {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+  }
+
+}

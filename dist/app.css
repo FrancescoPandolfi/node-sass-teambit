@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "harmonia";
+  src: url("../fonts/HarmoniaSansProCyr-Regular_gdi.woff");
+}
+@font-face {
+  font-family: "harmonia";
+  src: url("../fonts/HarmoniaSansProCyr-SemiBd_gdi.woff");
+  font-weight: bold;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "harmonia";
+}
+
+header {
+  width: 1150px;
+  margin: 0 auto;
+}
+header .menu-bar {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #beb5b0;
+}
+header .logo {
+  margin-right: auto;
+}
+header .main-menu {
+  display: flex;
+  list-style: none;
+  font-weight: bold;
+}
