@@ -1,4 +1,11 @@
-$font: 'harmonia';
+// Typography
+$font: 'harmonia', arial, sans-serif;
 $menufontSize: 13px;
+
+// Colors
 $mainColor: #58402c;
-$blueHover: #30488f;
+$secondaryColor: #30488f;
+
+// mediaquery
+$breakPointSmall: 768px;
+$breakPointBig: 1200px;

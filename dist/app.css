@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: "harmonia";
+  font-family: "harmonia", arial, sans-serif;
 }
 
 h1 {
@@ -47,6 +47,7 @@ header .logo {
 }
 header .main-menu {
   display: flex;
+  align-items: center;
   list-style: none;
   font-weight: bold;
   font-size: 13px;
@@ -69,6 +70,8 @@ header .main-menu li .btn-sign {
   padding: 10px 16px;
   transition: all 0.3s;
   font-size: 13px;
+  display: flex;
+  align-items: center;
   border: 1px solid #30488f;
   background-color: white;
 }
@@ -79,8 +82,13 @@ header .main-menu li .btn-sign:hover {
   color: white;
   background-color: #30488f;
 }
-header .main-menu li .btn-sign img {
+header .main-menu li .btn-sign:hover svg .google-link {
+  opacity: 0;
+  transition: all 0.3s;
+}
+header .main-menu li .btn-sign svg {
   height: 18px;
+  margin-right: 6px;
 }
 header .jumbotron {
   display: flex;
@@ -140,7 +148,7 @@ header .jumbotron .jumbo-img img {
   width: 100%;
 }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
   header {
     width: 100%;
     padding: 0 30px;
@@ -163,7 +171,7 @@ header .jumbotron .jumbo-img img {
     padding: 0 30px;
   }
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   header {
     padding: 0;
   }
