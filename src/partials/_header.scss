@@ -23,6 +23,28 @@ header {
     font-weight: bold;
     font-size: $menufontSize;
 
+    li.li-dropdown {
+      position: relative;
+      ul.dropdown {
+        opacity: 1;
+      }
+      ul {
+        border: 1px solid #ddd8cf;
+        position: absolute;
+        top: 20px;
+        left: -10px;
+        background-color: white;
+        border-radius: 5px;
+        padding: 5px 12px;
+        opacity: 0;
+        transition: all .3s;
+        filter: drop-shadow(1px 1px 2px lightgrey);
+        li {
+          margin: 5px 0;
+        }
+      }
+    }
+
     li {
       margin-left: 40px;
 
