@@ -3,7 +3,7 @@ header {
   margin: 0 auto;
   color: $mainColor;
   }
-header.scrolled {
+header.fixed {
   padding-top: 56px;
   }
 
@@ -11,16 +11,20 @@ nav {
   height: 76px;
   width: 100%
 }
-nav.scrolled {
+nav.fixed {
   height: 56px;
   margin: 0 auto;
-  background-color: white;
   position: fixed;
-  top: 0;
+  top: -60px;
   left: 0;
+  @include transition(top, .4s);
   z-index: 100;
-  border-bottom: 1px solid #beb5b0;
+  background-color: white;
+  border-bottom:   $borderBottom;
   box-shadow: 0 1px 1px 1px rgba(0,0,0,.08);
+}
+nav.scrolled {
+    top: 0;
 }
 
 .menu-bar {
@@ -30,9 +34,10 @@ nav.scrolled {
   i.hamburger {
     display: none;
     font-size: 26px;
+    cursor: pointer;
   }
 }
-.menu-bar.scrolled {
+.menu-bar.fixed {
   margin: 0 auto;
   width: $layoutWidth;
   border: 0;
@@ -48,10 +53,16 @@ nav.scrolled {
   font-weight: bold;
   font-size: $menufontSize;
 
-  li.li-dropdown {
+  .li-dropdown {
+    @include flexCenter;
     position: relative;
+    vertical-align: middle;
+    transform: translateY(2px);
     ul.dropdown {
       opacity: 1;
+    }
+    img {
+      vertical-align: middle;
     }
     ul {
       border: 1px solid #ddd8cf;
@@ -62,10 +73,10 @@ nav.scrolled {
       border-radius: 5px;
       padding: 5px 12px;
       opacity: 0;
-      transition: all .3s;
+      // @include transition(all, 300ms);
       filter: drop-shadow(1px 1px 2px lightgrey);
       li {
-        margin: 5px 0;
+        margin: 8px 0;
       }
     }
   }
@@ -82,11 +93,8 @@ nav.scrolled {
       &:hover {
         color: $secondaryColor;
       }
-      img {
-        vertical-align: middle;
-        transform: translateY(-1px);
-      }
     }
+
     .btn-sign {
       @include btn(white, 1px solid $secondaryColor, 8px 12px);
       @include flexCenter;
@@ -106,6 +114,13 @@ nav.scrolled {
         height: 18px;
         margin-right: 6px;
 
+      }
+    }
+    .btn-sign.scrolled {
+      @include btn($secondaryColor, 0, 8px 12px);
+      color: white;
+      svg .google-link {
+        opacity: 0;
       }
     }
   }
@@ -147,7 +162,7 @@ nav.scrolled {
         display: block;
         font-size: $menufontSize;
         color: $mainColor;
-        transition: all .3s;
+        @include transition(all, .3s);
         margin-top: 30px;
         &:hover {
           color: $secondaryColor;
@@ -171,7 +186,7 @@ nav.scrolled {
     width: 100%;
     padding: 0 30px;
 
-    .menu-bar.scrolled {
+    .menu-bar.fixed {
       width: auto;
       padding: 0 30px;
     }
@@ -195,12 +210,59 @@ nav.scrolled {
   header {
     padding: 0;
 
+    nav, nav.fixed {
+      height: 56px;
+      margin: 0 auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      @include transition(top, .4s);
+      z-index: 100;
+      background-color: white;
+      border-bottom:   $borderBottom;
+      box-shadow: 0 1px 1px 1px rgba(0,0,0,.08);
+    }
+
     .menu-bar {
       padding: 0 30px;
       height: 56px;
 
       .main-menu {
         display: none;
+      }
+      .main-menu.open {
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 1px 5px 2px rgba(0,0,0,.1);
+        display: block;
+        position: fixed;
+        top: 56px;
+        padding: 0 30px;
+        left: 0;
+        li {
+          margin: 0;
+          padding: 0;
+          line-height: 38px;
+          .solutions {
+            display: none;
+          }
+          .btn-sign {
+            justify-content: center;
+            line-height: 18px;
+            margin-bottom: 15px;
+            margin-top: 5px;
+          }
+          ul {
+            display: block;
+            opacity: 1;
+            position: static;
+            border: 0;
+            filter: none;
+            transition: none;
+            padding: 0;
+          }
+        }
+
       }
       i.hamburger {
         display: block;

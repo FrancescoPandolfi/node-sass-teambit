@@ -45,7 +45,7 @@ header {
   color: #58402c;
 }
 
-header.scrolled {
+header.fixed {
   padding-top: 56px;
 }
 
@@ -54,16 +54,21 @@ nav {
   width: 100%;
 }
 
-nav.scrolled {
+nav.fixed {
   height: 56px;
   margin: 0 auto;
-  background-color: white;
   position: fixed;
-  top: 0;
+  top: -60px;
   left: 0;
+  transition: top 0.4s;
   z-index: 100;
+  background-color: white;
   border-bottom: 1px solid #beb5b0;
   box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+nav.scrolled {
+  top: 0;
 }
 
 .menu-bar {
@@ -75,9 +80,10 @@ nav.scrolled {
 .menu-bar i.hamburger {
   display: none;
   font-size: 26px;
+  cursor: pointer;
 }
 
-.menu-bar.scrolled {
+.menu-bar.fixed {
   margin: 0 auto;
   width: 1150px;
   border: 0;
@@ -94,13 +100,20 @@ nav.scrolled {
   font-weight: bold;
   font-size: 13px;
 }
-.main-menu li.li-dropdown {
+.main-menu .li-dropdown {
+  display: flex;
+  align-items: center;
   position: relative;
+  vertical-align: middle;
+  transform: translateY(2px);
 }
-.main-menu li.li-dropdown ul.dropdown {
+.main-menu .li-dropdown ul.dropdown {
   opacity: 1;
 }
-.main-menu li.li-dropdown ul {
+.main-menu .li-dropdown img {
+  vertical-align: middle;
+}
+.main-menu .li-dropdown ul {
   border: 1px solid #ddd8cf;
   position: absolute;
   top: 20px;
@@ -109,12 +122,11 @@ nav.scrolled {
   border-radius: 5px;
   padding: 5px 12px;
   opacity: 0;
-  transition: all 0.3s;
   -webkit-filter: drop-shadow(1px 1px 2px lightgrey);
           filter: drop-shadow(1px 1px 2px lightgrey);
 }
-.main-menu li.li-dropdown ul li {
-  margin: 5px 0;
+.main-menu .li-dropdown ul li {
+  margin: 8px 0;
 }
 .main-menu li {
   margin-left: 40px;
@@ -124,10 +136,6 @@ nav.scrolled {
 }
 .main-menu li a:hover {
   color: #30488f;
-}
-.main-menu li a img {
-  vertical-align: middle;
-  transform: translateY(-1px);
 }
 .main-menu li .btn-sign {
   border-radius: 6px;
@@ -153,6 +161,18 @@ nav.scrolled {
 .main-menu li .btn-sign svg {
   height: 18px;
   margin-right: 6px;
+}
+.main-menu li .btn-sign.scrolled {
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all 0.3s;
+  font-size: 13px;
+  background-color: #30488f;
+  border: 0;
+  color: white;
+}
+.main-menu li .btn-sign.scrolled svg .google-link {
+  opacity: 0;
 }
 
 .jumbotron {
@@ -219,7 +239,7 @@ nav.scrolled {
     width: 100%;
     padding: 0 30px;
   }
-  header .menu-bar.scrolled {
+  header .menu-bar.fixed {
     width: auto;
     padding: 0 30px;
   }
@@ -245,12 +265,58 @@ nav.scrolled {
   header {
     padding: 0;
   }
+  header nav, header nav.fixed {
+    height: 56px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: top 0.4s;
+    z-index: 100;
+    background-color: white;
+    border-bottom: 1px solid #beb5b0;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.08);
+  }
   header .menu-bar {
     padding: 0 30px;
     height: 56px;
   }
   header .menu-bar .main-menu {
     display: none;
+  }
+  header .menu-bar .main-menu.open {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+    display: block;
+    position: fixed;
+    top: 56px;
+    padding: 0 30px;
+    left: 0;
+  }
+  header .menu-bar .main-menu.open li {
+    margin: 0;
+    padding: 0;
+    line-height: 38px;
+  }
+  header .menu-bar .main-menu.open li .solutions {
+    display: none;
+  }
+  header .menu-bar .main-menu.open li .btn-sign {
+    justify-content: center;
+    line-height: 18px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+  header .menu-bar .main-menu.open li ul {
+    display: block;
+    opacity: 1;
+    position: static;
+    border: 0;
+    -webkit-filter: none;
+            filter: none;
+    transition: none;
+    padding: 0;
   }
   header .menu-bar i.hamburger {
     display: block;
@@ -290,4 +356,14 @@ nav.scrolled {
   line-height: 25px;
   color: #58402c;
   display: block;
+}
+
+.bunny {
+  width: 100%;
+  padding: 100px 0;
+  text-align: center;
+  border-bottom: 1px solid #beb5b0;
+}
+.bunny img {
+  height: 290px;
 }

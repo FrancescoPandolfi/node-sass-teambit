@@ -33,3 +33,13 @@
     display: block;
   }
 }
+
+.bunny {
+  width: 100%;
+  padding: 100px 0;
+  text-align: center;
+  border-bottom: $borderBottom;
+  img {
+    height: 290px;
+  }
+}

@@ -17,3 +17,11 @@
   margin: 0 auto;
   padding: 0 30px;
 }
+
+@mixin transition($property, $time) {
+  -webkit-transition: $property $time;
+  -moz-transition: $property $time;
+  -o-transition: $property $time;
+  -ms-transition: $property $time;
+  transition: $property $time;
+}
