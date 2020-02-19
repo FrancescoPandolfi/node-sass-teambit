@@ -44,33 +44,63 @@ header {
   margin: 0 auto;
   color: #58402c;
 }
-header .menu-bar {
+
+header.scrolled {
+  padding-top: 56px;
+}
+
+nav {
   height: 76px;
+  width: 100%;
+}
+
+nav.scrolled {
+  height: 56px;
+  margin: 0 auto;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid #beb5b0;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.menu-bar {
+  height: 100%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #beb5b0;
 }
-header .menu-bar i.hamburger {
+.menu-bar i.hamburger {
   display: none;
   font-size: 26px;
 }
-header .logo {
+
+.menu-bar.scrolled {
+  margin: 0 auto;
+  width: 1150px;
+  border: 0;
+}
+
+.logo {
   margin-right: auto;
 }
-header .main-menu {
+
+.main-menu {
   display: flex;
   align-items: center;
   list-style: none;
   font-weight: bold;
   font-size: 13px;
 }
-header .main-menu li.li-dropdown {
+.main-menu li.li-dropdown {
   position: relative;
 }
-header .main-menu li.li-dropdown ul.dropdown {
+.main-menu li.li-dropdown ul.dropdown {
   opacity: 1;
 }
-header .main-menu li.li-dropdown ul {
+.main-menu li.li-dropdown ul {
   border: 1px solid #ddd8cf;
   position: absolute;
   top: 20px;
@@ -83,108 +113,114 @@ header .main-menu li.li-dropdown ul {
   -webkit-filter: drop-shadow(1px 1px 2px lightgrey);
           filter: drop-shadow(1px 1px 2px lightgrey);
 }
-header .main-menu li.li-dropdown ul li {
+.main-menu li.li-dropdown ul li {
   margin: 5px 0;
 }
-header .main-menu li {
+.main-menu li {
   margin-left: 40px;
 }
-header .main-menu li a:link, header .main-menu li a:visited, header .main-menu li a:active {
+.main-menu li a:link, .main-menu li a:visited, .main-menu li a:active {
   color: #58402c;
 }
-header .main-menu li a:hover {
+.main-menu li a:hover {
   color: #30488f;
 }
-header .main-menu li a img {
+.main-menu li a img {
   vertical-align: middle;
   transform: translateY(-1px);
 }
-header .main-menu li .btn-sign {
+.main-menu li .btn-sign {
   border-radius: 6px;
-  padding: 10px 16px;
+  padding: 8px 12px;
   transition: all 0.3s;
   font-size: 13px;
+  background-color: white;
+  border: 1px solid #30488f;
   display: flex;
   align-items: center;
-  border: 1px solid #30488f;
-  background-color: white;
 }
-header .main-menu li .btn-sign:link {
+.main-menu li .btn-sign:link {
   color: #30488f;
 }
-header .main-menu li .btn-sign:hover {
+.main-menu li .btn-sign:hover {
   color: white;
   background-color: #30488f;
 }
-header .main-menu li .btn-sign:hover svg .google-link {
+.main-menu li .btn-sign:hover svg .google-link {
   opacity: 0;
   transition: all 0.3s;
 }
-header .main-menu li .btn-sign svg {
+.main-menu li .btn-sign svg {
   height: 18px;
   margin-right: 6px;
 }
-header .jumbotron {
+
+.jumbotron {
   display: flex;
   align-items: center;
   padding: 110px 0;
 }
-header .jumbotron .jumbo-text {
+.jumbotron .jumbo-text {
   width: 50%;
 }
-header .jumbotron .jumbo-text p {
+.jumbotron .jumbo-text p {
   font-size: 21px;
   line-height: 31px;
   margin-top: 30px;
 }
-header .jumbotron .jumbo-text .signup-zone {
+.jumbotron .jumbo-text .signup-zone {
   margin-top: 50px;
 }
-header .jumbotron .jumbo-text .signup-zone .btn-blu {
+.jumbotron .jumbo-text .signup-zone .btn-blu {
   border-radius: 6px;
-  padding: 10px 16px;
+  padding: 10px 18px;
   transition: all 0.3s;
   font-size: 13px;
   background-color: #30488f;
+  border: 0;
 }
-header .jumbotron .jumbo-text .signup-zone .btn-blu img {
+.jumbotron .jumbo-text .signup-zone .btn-blu img {
   height: 18px;
   vertical-align: middle;
   transform: translateY(-1px);
 }
-header .jumbotron .jumbo-text .signup-zone .btn-blu:link, header .jumbotron .jumbo-text .signup-zone .btn-blu:visited, header .jumbotron .jumbo-text .signup-zone .btn-blu:active {
+.jumbotron .jumbo-text .signup-zone .btn-blu:link, .jumbotron .jumbo-text .signup-zone .btn-blu:visited, .jumbotron .jumbo-text .signup-zone .btn-blu:active {
   color: white;
 }
-header .jumbotron .jumbo-text .signup-zone .btn-blu:hover {
+.jumbotron .jumbo-text .signup-zone .btn-blu:hover {
   background-color: #263970;
 }
-header .jumbotron .jumbo-text .signup-zone .or {
+.jumbotron .jumbo-text .signup-zone .or {
   padding: 0 10px;
   color: #afafaf;
 }
-header .jumbotron .jumbo-text .signup-zone .login {
+.jumbotron .jumbo-text .signup-zone .login {
   display: block;
   font-size: 13px;
   color: #58402c;
   transition: all 0.3s;
   margin-top: 30px;
 }
-header .jumbotron .jumbo-text .signup-zone .login:hover {
+.jumbotron .jumbo-text .signup-zone .login:hover {
   color: #30488f;
 }
-header .jumbotron .jumbo-text .signup-zone .login i {
+.jumbotron .jumbo-text .signup-zone .login i {
   vertical-align: middle;
 }
-header .jumbotron .jumbo-img {
+.jumbotron .jumbo-img {
   width: 50%;
 }
-header .jumbotron .jumbo-img img {
+.jumbotron .jumbo-img img {
   width: 100%;
 }
 
 @media (max-width: 1200px) {
   header {
     width: 100%;
+    padding: 0 30px;
+  }
+  header .menu-bar.scrolled {
+    width: auto;
     padding: 0 30px;
   }
   header .jumbotron {

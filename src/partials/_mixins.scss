@@ -1,8 +1,10 @@
-@mixin btn {
+@mixin btn($background, $border, $padding) {
   border-radius: 6px;
-  padding: 10px 16px;
+  padding: $padding;
   transition: all .3s;
   font-size: $menufontSize;
+  background-color: $background;
+  border: $border;
 }
 @mixin flexCenter {
   display: flex;

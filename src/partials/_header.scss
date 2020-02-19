@@ -2,145 +2,166 @@ header {
   width: $layoutWidth;
   margin: 0 auto;
   color: $mainColor;
+  }
+header.scrolled {
+  padding-top: 56px;
+  }
 
-  .menu-bar {
-    height: 76px;
-    @include flexCenter;
-    border-bottom: 1px solid #beb5b0;
-    i.hamburger {
-      display: none;
-      font-size: 26px;
+nav {
+  height: 76px;
+  width: 100%
+}
+nav.scrolled {
+  height: 56px;
+  margin: 0 auto;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid #beb5b0;
+  box-shadow: 0 1px 1px 1px rgba(0,0,0,.08);
+}
+
+.menu-bar {
+  height: 100%;
+  @include flexCenter;
+  border-bottom: 1px solid #beb5b0;
+  i.hamburger {
+    display: none;
+    font-size: 26px;
+  }
+}
+.menu-bar.scrolled {
+  margin: 0 auto;
+  width: $layoutWidth;
+  border: 0;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.main-menu {
+  @include flexCenter;
+  list-style: none;
+  font-weight: bold;
+  font-size: $menufontSize;
+
+  li.li-dropdown {
+    position: relative;
+    ul.dropdown {
+      opacity: 1;
+    }
+    ul {
+      border: 1px solid #ddd8cf;
+      position: absolute;
+      top: 20px;
+      left: -10px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 5px 12px;
+      opacity: 0;
+      transition: all .3s;
+      filter: drop-shadow(1px 1px 2px lightgrey);
+      li {
+        margin: 5px 0;
+      }
     }
   }
 
-  .logo {
-    margin-right: auto;
-  }
+  li {
+    margin-left: 40px;
 
-  .main-menu {
-    @include flexCenter;
-    list-style: none;
-    font-weight: bold;
-    font-size: $menufontSize;
-
-    li.li-dropdown {
-      position: relative;
-      ul.dropdown {
-        opacity: 1;
+    a {
+      &:link,
+      &:visited,
+      &:active {
+        color: $mainColor;
       }
-      ul {
-        border: 1px solid #ddd8cf;
-        position: absolute;
-        top: 20px;
-        left: -10px;
-        background-color: white;
-        border-radius: 5px;
-        padding: 5px 12px;
-        opacity: 0;
-        transition: all .3s;
-        filter: drop-shadow(1px 1px 2px lightgrey);
-        li {
-          margin: 5px 0;
-        }
+      &:hover {
+        color: $secondaryColor;
+      }
+      img {
+        vertical-align: middle;
+        transform: translateY(-1px);
       }
     }
+    .btn-sign {
+      @include btn(white, 1px solid $secondaryColor, 8px 12px);
+      @include flexCenter;
 
-    li {
-      margin-left: 40px;
+      &:link {
+        color: $secondaryColor;
+      }
+      &:hover {
+        color: white;
+        background-color: $secondaryColor;
+        svg .google-link {
+          opacity: 0;
+          transition: all .3s;
+        }
+      }
+      svg {
+        height: 18px;
+        margin-right: 6px;
 
-      a {
-        &:link,
-        &:visited,
-        &:active {
-          color: $mainColor;
-        }
-        &:hover {
-          color: $secondaryColor;
-        }
+      }
+    }
+  }
+}
+.jumbotron {
+  @include flexCenter;
+  padding: 110px 0;
+
+  .jumbo-text {
+    width: 50%;
+
+    p {
+      font-size: 21px;
+      line-height: 31px;
+      margin-top: 30px;
+    }
+
+    .signup-zone {
+      margin-top: 50px;
+      .btn-blu {
+        @include btn($secondaryColor, 0, 10px 18px);
         img {
+          height: 18px;
           vertical-align: middle;
           transform: translateY(-1px);
         }
-      }
-      .btn-sign {
-        @include btn;
-        @include flexCenter;
-        border: 1px solid $secondaryColor;
-        background-color: white;
-
-        &:link {
-          color: $secondaryColor;
+        &:link, &:visited, &:active {
+          color: white;
         }
         &:hover {
-          color: white;
-          background-color: $secondaryColor;
-          svg .google-link {
-            opacity: 0;
-            transition: all .3s;
-          }
+          background-color: darken($secondaryColor, 8%)
         }
-        svg {
-          height: 18px;
-          margin-right: 6px;
-
+      }
+      .or {
+        padding: 0 10px;
+        color: #afafaf;
+      }
+      .login {
+        display: block;
+        font-size: $menufontSize;
+        color: $mainColor;
+        transition: all .3s;
+        margin-top: 30px;
+        &:hover {
+          color: $secondaryColor;
+        }
+        i {
+          vertical-align: middle;
         }
       }
     }
   }
-  .jumbotron {
-    @include flexCenter;
-    padding: 110px 0;
-
-    .jumbo-text {
-      width: 50%;
-
-      p {
-        font-size: 21px;
-        line-height: 31px;
-        margin-top: 30px;
-      }
-
-      .signup-zone {
-        margin-top: 50px;
-        .btn-blu {
-          @include btn;
-          background-color: $secondaryColor;
-          img {
-            height: 18px;
-            vertical-align: middle;
-            transform: translateY(-1px);
-          }
-          &:link, &:visited, &:active {
-            color: white;
-          }
-          &:hover {
-            background-color: darken($secondaryColor, 8%)
-          }
-        }
-        .or {
-          padding: 0 10px;
-          color: #afafaf;
-        }
-        .login {
-          display: block;
-          font-size: $menufontSize;
-          color: $mainColor;
-          transition: all .3s;
-          margin-top: 30px;
-          &:hover {
-            color: $secondaryColor;
-          }
-          i {
-            vertical-align: middle;
-          }
-        }
-      }
-    }
-    .jumbo-img {
-      width: 50%;
-      img {
-        width: 100%;
-      }
+  .jumbo-img {
+    width: 50%;
+    img {
+      width: 100%;
     }
   }
 }
@@ -149,6 +170,11 @@ header {
   header {
     width: 100%;
     padding: 0 30px;
+
+    .menu-bar.scrolled {
+      width: auto;
+      padding: 0 30px;
+    }
 
     .jumbotron {
       display: block;
@@ -176,7 +202,6 @@ header {
       .main-menu {
         display: none;
       }
-
       i.hamburger {
         display: block;
       }
